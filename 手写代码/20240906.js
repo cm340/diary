@@ -72,3 +72,27 @@ function bar1 () {
     foo2();
 }
 bar1() // 20
+
+
+let i = 0
+function increase(){
+  i++
+  console.log(`courrent counter is ${i}`)
+  return i
+}
+increase()
+increase()
+increase()
+
+function increase1(){
+    let i = 0;
+    const test = () => {
+        ++i
+        console.log(`increase1 counter is ${i}`)
+        return i
+    }
+    test();
+}
+increase1()
+increase1()
+increase1()
