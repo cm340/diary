@@ -73,26 +73,48 @@ function bar1 () {
 }
 bar1() // 20
 
-
+// 可以这样写，但是在全局范围内会多出一个变量i，这样就不好了。
 let i = 0
 function increase(){
   i++
   console.log(`courrent counter is ${i}`)
   return i
 }
-increase()
-increase()
-increase()
 
-function increase1(){
+increase(); // 1
+increase(); // 2
+increase(); // 3
+
+function increase3 () {
     let i = 0;
-    const test = () => {
-        ++i
-        console.log(`increase1 counter is ${i}`)
-        return i
-    }
-    test();
+    return () => {
+        i++;
+        console.log(`increase2 counter is ${i}`);
+        return i;
+    };
 }
-increase1()
-increase1()
-increase1()
+increase3()(); // 1
+increase3()(); // 1
+increase3()(); // 1
+
+const increase4 = (() => {
+    let i = 0
+    return () =>{
+        i++;
+        console.log(`increase4 counter is ${i}`);
+        return i;
+    }
+})();
+increase4(); // 1
+increase4(); // 2
+increase4(); // 3
+
+(() =>{
+    let i = 0;
+    return (() => {
+        ++i
+        console.log(`increase1 counter is ${i}`) // 1
+        return i
+    })()
+})();
+
