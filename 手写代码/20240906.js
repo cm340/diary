@@ -118,3 +118,5 @@ increase4(); // 3
     })()
 })();
 
+// 抖店商品列表一次最大允许获取1w数据 超出1w数据 怎么获取全店总数和执行分批
+// https://github.com/apachecn/Interview?tab=readme-ov-file
