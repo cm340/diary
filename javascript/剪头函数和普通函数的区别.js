@@ -15,7 +15,7 @@ b.arraw(4,5,6);
 b.basic(7,8,9);
 console.log(window.arrValue, 'window');
 
-// this指向不同 1.箭头函数的this指向父作用域this 2.普通函数的this指向调用时所在的对象 无法使用apply, call, bind改变this指向
+// this指向不同 1.箭头函数的this指向父作用域this 2.普通函数的this指向调用时所在的对象
 // 写法不同
 // 剪头函数不能使用arguments, 不能作为构造函数
 
